@@ -4,6 +4,27 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+   <%= f.input :first_name,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "Prénom" }%>
+     <%= f.input :last_name,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "Nom" }%>
+      <%= f.input :username,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "Pseudo" }%>
+     <%= f.input :birth_date,
+                as: :date,
+                html5: true,
+                autofocus: true,
+                input_html: { autocomplete: "Date de naissance" }%>
+     <%= f.input :adress,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "Adresse" }%>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
@@ -11,10 +32,10 @@
     <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
+                input_html: { autocomplete: "Mot de passe" } %>
     <%= f.input :password_confirmation,
                 required: true,
-                input_html: { autocomplete: "new-password" } %>
+                input_html: { autocomplete: "Mot de passe" } %>
   </div>
 
   <div class="form-actions">
