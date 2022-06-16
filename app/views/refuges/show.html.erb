@@ -1,0 +1,20 @@
+  <div class="container">
+
+    <div class="refuge-info">
+      <h1><%= @refuge.name %></h1>
+        <h3>Bonjour à tous et bienvenue sur la page de notre refuge ! Vous trouverez sur cette page toutes nos informations et nos pensionnaires à l'adoption !</h3>
+        <%= @refuge.address %> <%= @refuge.postcode %> <%= @refuge.city %>
+    </div>
+      <div class="refuge-animal">
+        <% @refuge.animals.each do |animal| %>
+          <h1><%= animal.name %></h1>
+          <h2><%= animal.species %></h2>
+          <h2><%= animal.age %> ans</h2>
+            <h3><%= animal.description %></h3>
+          <% end %>
+      </div>
+  </div>
+
+
+
+<%= link_to "Retour aux refuges", refuges_path, class:"btn btn-primary" %>

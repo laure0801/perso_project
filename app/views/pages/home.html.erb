@@ -1,5 +1,31 @@
+
+<div class="container">
 <h1>Adopt a friend !</h1>
 <p>Trouves ton compagnon autour de chez toi !</p>
+<div class="row">
+      <div class="col-lg-6">
+          <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Find your Partner</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">Sign Up</h1>
+            <%= link_to "Sign Up", new_user_registration_path, class: "w-100 btn btn-lg btn-outline-primary" %>
+          </div>
+        </div>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-6">
+          <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">SPA</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">Click below to get started</h1>
 
-<h1>Tu es un refuge </h1>
-<%= link_to "Se connecter",  new_refuge_session_path %>
+            <%= link_to "Sign Up", new_refuge_registration_path, class: "w-100 btn btn-lg btn-outline-primary" %>
+          </div>
+        </div>
+      </div><!-- /.col-lg-4 -->
+      <%= link_to "Voir les refuges", refuges_path  %>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<h1>Hello <%= @refuge.name %> !<h1>
+
+<h2>Vos informations :</h2>
+<ul>
+<li>Adresse : <%= @refuge.address %></li>
+<li>Code Postal : <%= @refuge.postcode %></li>
+<li>Ville : <%= @refuge.city %></li>
+</ul>
+
+<h2>Vos animaux à l'adoption :</h2>
+<% @animals.each do |animal| %>
+<ul>
+<li>Nom: <%= animal.name %></li>
+</ul>
+<% end %>
+
+
+<h4>Ajouter un nouveau pensionnaire :</h4>
+ <%= render "animals/animalform", refuge: @refuge, animal: @animal %>

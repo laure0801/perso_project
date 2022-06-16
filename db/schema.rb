@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_30_070614) do
+ActiveRecord::Schema.define(version: 2022_06_15_133708) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2022_05_30_070614) do
   create_table "refuges", force: :cascade do |t|
     t.string "name"
     t.string "address"
-    t.integer "postcode"
+    t.string "postcode"
     t.string "city"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

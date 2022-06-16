@@ -1,10 +1,21 @@
 class RefugesController < ApplicationController
-  before_filter :authenticate_admin!
+  before_action :set_refuge, only: [:show]
   def index
     @refuges = Refuge.all
   end
 
   def show
+    @animal = @refuge.animals
+    @animal = Animal.new
+  end
+
+  private
+
+  def set_refuge
     @refuge = Refuge.find(params[:id])
+  end
+
+  def refuge_params
+    params.require(:refuge).permit[:name, :address, :postcode, :city]
   end
 end
