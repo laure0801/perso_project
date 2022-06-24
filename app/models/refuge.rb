@@ -5,4 +5,6 @@ class Refuge < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :name, presence: true
   has_many :animals
+  has_many :likes, dependent: :destroy
+
 end

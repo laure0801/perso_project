@@ -5,8 +5,7 @@ class RefugesController < ApplicationController
   end
 
   def show
-    @animal = @refuge.animals
-    @animal = Animal.new
+
   end
 
   private

@@ -11,10 +11,18 @@
           <h2><%= animal.species %></h2>
           <h2><%= animal.age %> ans</h2>
             <h3><%= animal.description %></h3>
+            <%= link_to "edit", edit_refuge_animal_path(@refuge, animal) %>
           <% end %>
       </div>
+      <% if user_signed_in? %>
+      <% pre_like = @refuge.likes.find { |like| like.user_id == current_user.id} %>
+        <% if pre_like %>
+          <%= button_to 'Unlike', refuge_like_path(@refuge, pre_like), method: :delete %>
+        <% else %>
+           <%= button_to 'Like', refuge_likes_path(@refuge), method: :post %>
+        <% end %>
+        <% end %>
+      <p><%= @refuge.likes.count %> <%= (@refuge.likes.count) == 1 ? 'Like' : 'Likes'%></p>
   </div>
-
-
 
 <%= link_to "Retour aux refuges", refuges_path, class:"btn btn-primary" %>

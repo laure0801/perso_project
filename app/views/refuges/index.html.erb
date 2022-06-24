@@ -3,6 +3,7 @@
   <img class="card-img-top" src="..." alt="Card image cap">
   <div class="card-body">
       <h3><%= link_to refuge.name, refuge_path(refuge) %></h3>
+      <p><%= refuge.likes.count %> <%= (refuge.likes.count) == 1 ? 'Like' : 'Likes'%></p>
   </div>
 </div>
 <% end %>
